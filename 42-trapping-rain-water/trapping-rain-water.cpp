@@ -2,9 +2,10 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n=height.size();
-        int trapped_water=0;
+        
         vector<int>lmax(n,0); 
         vector<int>rmax(n,0);
+
         lmax[0]=height[0];  //intializing with first value of height
         rmax[n-1]=height[n-1]; //intializing with last value of height
 
@@ -16,6 +17,7 @@ public:
         }
 
         //calculations
+        int trapped_water=0;
         for(int i=0;i<n;i++){
              trapped_water += min(lmax[i],rmax[i])-height[i];
         }
