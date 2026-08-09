@@ -21,7 +21,7 @@ public:
             }
          }
             if(hascycle==false) {
-                return nullptr;   //nocycle found
+                return NULL;   //nocycle found
             }
 
             fast=head;
