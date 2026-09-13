@@ -7,11 +7,10 @@ public:
             if(i<n){
                 ans[i]=nums[i];
             }
-            else if(i>=n){
+            else {
                 ans[i]=nums[i-n];
             }
         }
         return ans;
     }
-
 };
