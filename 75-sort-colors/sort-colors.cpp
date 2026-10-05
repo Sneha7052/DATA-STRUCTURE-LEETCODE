@@ -5,8 +5,7 @@ public:
          int l=0,mid=0,r=nums.size()-1;
          while(mid<=r)
          {
-             if(nums[mid]==0)
-             {
+             if(nums[mid]==0) {
                 swap(nums[l],nums[mid]);
                 l++;
                 mid++;
