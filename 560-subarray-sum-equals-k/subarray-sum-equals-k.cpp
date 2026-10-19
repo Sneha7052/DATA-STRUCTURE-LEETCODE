@@ -2,18 +2,18 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         unordered_map<int,int>mapp;
-        int c=0,sum=0;
-        for(int i=0;i<nums.size();i++){
-            sum=sum+nums[i];
+        int n=nums.size();
+        mapp[0]=1;    // so that number itself subarray bhi aa jaye
+        int currsum=0, count=0;
 
-            if(sum==k) c++;
-
-            int val=sum-k;
-            if(mapp.find(val)!=mapp.end()){
-                c+=mapp[val];
+        for(int i=0;i<n;i++){
+            currsum+=nums[i];
+            int need=currsum-k;
+            if(mapp.find(need)!=mapp.end()){
+                count+=mapp[need];
             }
-            mapp[sum]++;
+            mapp[currsum]++;
         }
-           return c;
+        return count;
     }
 };
